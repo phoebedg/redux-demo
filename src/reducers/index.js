@@ -1,6 +1,10 @@
-import { combineReducers } from 'redux';
-import placeholder from './placeholder';
+import { combineReducers } from "redux";
+import { XResultsReducer } from "./XResultsReducer";
+import { XSearchReducer } from "./XSearchReducer";
+import { XReceiveVideosReducer } from "./XReceiveVideosReducer";
 
 export default combineReducers({
-  placeholder: placeholder
+  videos: XReceiveVideosReducer,
+  videoId: XResultsReducer,
+  input: XSearchReducer
 });

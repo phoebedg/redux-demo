@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import { setVideo } from "../actions/XindexActions";
+import XSearchResults from "../components/XSearchResults";
 
 const mapStateToProps = reduxState => {
   return {
-    videoId: reduxState.videoId
+    videos: reduxState.videos
   };
 };
 

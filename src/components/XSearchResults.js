@@ -7,10 +7,10 @@ class XSearchResults extends React.Component {
     return (
       <div>
         <ul className="results-list">
-          {videos.items.map(video => {
+          {videos.map(video => {
             return (
               <XSearchResult
-                onClick={() => handleClick(video.id.videoId)}
+                handleClick={handleClick}
                 result={video}
                 key={video.id.videoId}
               />

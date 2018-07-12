@@ -20,7 +20,6 @@ export function fetchVideos(input) {
     )
       .then(response => response.json())
       .then(result => {
-        console.log(result);
         dispatch(receiveVideos(result));
         dispatch(setInput(""));
       })

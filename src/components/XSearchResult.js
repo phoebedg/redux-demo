@@ -1,19 +1,19 @@
 import React from "react";
 
-function XSearchResult() {
+function XSearchResult({ handleClick, result }) {
   return (
-    <li
-      className="result-item"
-      onClick={event => {
-        this.props.playVideo(videoId);
-      }}
-    >
-      <img className="result-img" src={url} height={height} width={width} />
+    <li className="result-item" onClick={() => handleClick(result.id.videoId)}>
+      <img
+        className="result-img"
+        src={result.snippet.thumbnails.default.url}
+        height={result.snippet.thumbnails.default.height}
+        width={result.snippet.thumbnails.default.width}
+      />
       <div className="result-description">
         <div>
-          <strong>{title}</strong>
+          <strong>{result.snippet.title}</strong>
         </div>
-        {description}
+        {result.snippet.description}
       </div>
     </li>
   );

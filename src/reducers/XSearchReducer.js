@@ -1,4 +1,4 @@
-export function searchReducer(reduxState = "", action) {
+export function XSearchReducer(reduxState = "", action) {
   switch (action.type) {
     case "SET_INPUT":
       return action.input;

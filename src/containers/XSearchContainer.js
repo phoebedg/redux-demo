@@ -19,7 +19,9 @@ const mapStateToProps = reduxState => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleChange: input => dispatch(setInput(input)),
+    handleChange: input => {
+      dispatch(setInput(input));
+    },
     handleSubmit: (event, input) => {
       event.preventDefault();
       dispatch(fetchVideos(input));
