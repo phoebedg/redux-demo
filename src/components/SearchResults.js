@@ -1,22 +1,28 @@
-import React from 'react';
-import SearchResult from './SearchResult';
+import React from "react";
+import SearchResult from "./SearchResult";
 
 class SearchResults extends React.Component {
-  render(){
+  render() {
     return (
       <div>
         <ul className="results-list">
-          {this.props.results.map( result => {
-            return <SearchResult
-              playVideo={this.props.playVideo}
-              result={result}
-              key={result.id.videoId}
-            />;
+          {this.props.results.map(result => {
+            return (
+              <SearchResult
+                playVideo={this.props.playVideo}
+                result={result}
+                key={result.id.videoId}
+              />
+            );
           })}
         </ul>
       </div>
     );
   }
 }
+
+SearchResults.defaultProps = {
+  results: []
+};
 
 export default SearchResults;

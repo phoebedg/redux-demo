@@ -1,38 +1,38 @@
-import React from 'react';
+import React from "react";
 
 class Player extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     window.onYouTubeIframeAPIReady = () => {
-      this.player = new YT.Player('player', {
-        height: '390',
-        width: '640',
+      this.player = new YT.Player("player", {
+        height: "390",
+        width: "640",
         videoId: this.props.videoId
       });
-    }
+    };
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     const { videoId } = nextProps;
-    if(videoId !== this.props.videoId){
-      this.player.loadVideoById( videoId );
+    if (videoId !== this.props.videoId) {
+      this.player.loadVideoById(videoId);
     }
   }
 
-  shouldComponentUpdate(){
+  shouldComponentUpdate() {
     return false;
   }
 
-  render(){
+  render() {
     return (
       <div>
-        <div id="player"></div>
+        <div id="player" />
       </div>
     );
   }
-};
+}
 
 export default Player;

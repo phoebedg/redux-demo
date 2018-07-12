@@ -1,29 +1,33 @@
-import React from 'react';
-import Player from './Player';
-import Search from './Search';
+import React from "react";
+import Player from "./Player";
+import Search from "./Search";
+import XSearchContainer from "../containers/XSearchContainer";
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
 
     this.state = {
-      videoId: 'xsSnOQynTHs'
+      videoId: "xsSnOQynTHs"
     };
 
     this.playVideo = this.playVideo.bind(this);
   }
 
-  playVideo(videoId){
+  playVideo(videoId) {
     this.setState({
       videoId: videoId
     });
   }
 
-  render(){
+  render() {
     return (
       <div className="row">
         <div className="col-12 d-flex justify-content-center">
           <Player videoId={this.state.videoId} />
+        </div>
+        <div>
+          <XSearchContainer />
         </div>
         <div className="col-6 offset-3 d-flex justify-content-center">
           <Search playVideo={this.playVideo} />
